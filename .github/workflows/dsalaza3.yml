@@ -1,0 +1,25 @@
+name: Salazar-Assignment8
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+      - name: Build with Maven
+        run: mvn --batch-mode --update-snapshots package
+ 
+        run: git clone https://github.com/Graylog2/graylog2-server
+        run: cd graylog2-server
+        run: git checkout 87d63f677759336987fbb21fd9c688235618e7bb
+        run: mvn test-compile -pl graylog2-server -am
+        run: mvn -pl graylog2-server test -Dtest=org.graylog2.alarmcallbacks.AlarmCallbackHistoryServiceImplTest#testSaveForDummySuccess
+        run: mvn -pl graylog2-server edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.graylog2.alarmcallbacks.AlarmCallbackHistoryServiceImplTest#testSaveForDummySuccess
+        
