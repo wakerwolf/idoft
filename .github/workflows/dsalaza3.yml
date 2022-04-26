@@ -18,7 +18,7 @@ jobs:
       - name: next step
         run: cd graylog2-server
       - name: next step
-        run: git checkout 87d63f677759336987fbb21fd9c688235618e7bb
+        run: git rev-parse HEAD
       - name: next step
         run: mvn test-compile -pl graylog2-server -am
       - name: next step
