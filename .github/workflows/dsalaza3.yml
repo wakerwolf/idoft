@@ -15,14 +15,14 @@ jobs:
           distribution: 'adopt'
       - name: Build with Maven 
         run: git clone https://github.com/Graylog2/graylog2-server
-         - name:
+      - name: next step
         run: cd graylog2-server
-         - name:
+      - name: next step
         run: git checkout 87d63f677759336987fbb21fd9c688235618e7bb
-         - name:
+      - name: next step
         run: mvn test-compile -pl graylog2-server -am
-         - name:
+      - name: next step
         run: mvn -pl graylog2-server test -Dtest=org.graylog2.alarmcallbacks.AlarmCallbackHistoryServiceImplTest#testSaveForDummySuccess
-         - name:
+      - name: next step
         run: mvn -pl graylog2-server edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.graylog2.alarmcallbacks.AlarmCallbackHistoryServiceImplTest#testSaveForDummySuccess
         
