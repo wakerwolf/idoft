@@ -18,8 +18,6 @@ jobs:
       - name: next step
         run: cd graylog2-server
       - name: next step
-        run: cd sub
-      - name: next step
         run: git rev-parse HEAD
       - name: next step
         run: mvn test-compile -pl graylog2-server -am
