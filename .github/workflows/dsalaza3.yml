@@ -16,6 +16,8 @@ jobs:
       - name: Build with Maven 
         run: git clone https://github.com/Graylog2/graylog2-server
       - name: next step
+        run: pwd
+      - name: next step
         run: cd graylog2-server
       - name: next step
         run: git rev-parse HEAD
